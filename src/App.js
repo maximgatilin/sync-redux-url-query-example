@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import {Router, Route, IndexRedirect, browserHistory} from 'react-router';
+import {Router, Route, browserHistory} from 'react-router';
 import store from './redux';
 import {syncHistoryWithStore} from 'react-router-redux';
 import './App.css';
