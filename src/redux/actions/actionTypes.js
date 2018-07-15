@@ -1,0 +1,2 @@
+export const PRODUCT_ACTION = 'PRODUCT_ACTION';
+export const PEOPLE_ACTION = 'PEOPLE_ACTION';
