@@ -3,14 +3,19 @@ import {
 } from '../actions/actionTypes';
 
 import products from '../../mockData/products'
-import {getMaxVal, getMinVal} from '../../utils/functions';
+import {getMaxVal, getMinVal, getValueFromUrl} from '../../utils/functions';
+
+const minPrice = getMinVal(products, 'price');
+const maxPrice = getMaxVal(products, 'price');
+const minPriceFilter = getValueFromUrl('products.minPrice');
+const maxPriceFilter = getValueFromUrl('products.maxPrice');
 
 const initialState = {
   list: products,
-  minPrice: getMinVal(products, 'price'),
-  maxPrice: getMaxVal(products, 'price'),
-  minPriceFilter: getMinVal(products, 'price'),
-  maxPriceFilter: getMaxVal(products, 'price'),
+  minPrice,
+  maxPrice,
+  minPriceFilter: minPriceFilter === null ? minPrice : minPriceFilter,
+  maxPriceFilter: maxPriceFilter === null ? maxPrice : maxPriceFilter,
 };
 
 export default (state = initialState, action) => {
