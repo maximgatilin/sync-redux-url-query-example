@@ -7,6 +7,8 @@ export default createSelector(
   (people, min, max) => {
     return people.filter(person => {
       return person.age >= min && person.age <=max;
+    }).sort((a, b) => {
+      return a.age - b.age;
     });
   }
 );

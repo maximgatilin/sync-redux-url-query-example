@@ -7,6 +7,8 @@ export default createSelector(
   (products, min, max) => {
     return products.filter(product => {
       return product.price >= min && product.price <=max;
+    }).sort((a, b) => {
+      return a.price - b.price;
     });
   }
 );
