@@ -10,7 +10,7 @@ const initialState = {
   minPrice: getMinVal(products, 'price'),
   maxPrice: getMaxVal(products, 'price'),
   minPriceFilter: getMinVal(products, 'price'),
-  maxPriceFilter: getMaxVal(products, 'price')
+  maxPriceFilter: getMaxVal(products, 'price'),
 };
 
 export default (state = initialState, action) => {
