@@ -11,7 +11,6 @@ class People extends Component {
 
     return (
       <div>
-        <h2>People</h2>
         <h4>Filter by age: </h4>
         <div style={{display: 'flex'}}>
           <div style={{flex: '0 0 auto', padding: '0 10px'}}>{minAgeFilter}</div>
