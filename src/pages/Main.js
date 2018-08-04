@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
+import 'rc-slider/assets/index.css';
 
 export default class Main extends Component {
   render() {

@@ -1,5 +1,6 @@
-import { PRODUCT_ACTION } from './actionTypes';
+import { CHANGE_PRODUCT_PRICE_FILTER } from './actionTypes';
 
-export const productAction = () => ({
-  type: PRODUCT_ACTION
+export const changeProductPriceFilter = (filter) => ({
+  type: CHANGE_PRODUCT_PRICE_FILTER,
+  payload: {filter}
 });
