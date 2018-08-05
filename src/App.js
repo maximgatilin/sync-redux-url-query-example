@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import {Router, Route, browserHistory} from 'react-router';
+import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 import store from './redux';
 import {syncHistoryWithStore} from 'react-router-redux';
 import './App.css';
@@ -16,6 +16,7 @@ class App extends Component {
       <Provider store={store}>
         <Router history={history}>
           <Route path="/" component={Main}>
+            <IndexRoute component={Products} />
             <Route path="/products" component={Products}/>
             <Route path="/people" component={People}/>
           </Route>
