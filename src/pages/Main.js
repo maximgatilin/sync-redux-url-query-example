@@ -13,7 +13,7 @@ export default class Main extends Component {
               <Link className={'nav-link'} activeClassName={'active'} to={"/products"}>Products</Link>
             </li>
             <li className="nav-item">
-              <Link className={'nav-link'} activeClassName={'active'} to={"/people"}>People</Link>
+              <Link className={'nav-link'} activeClassName={'active'} to={"/users"}>Users</Link>
             </li>
           </ul>
         </nav>

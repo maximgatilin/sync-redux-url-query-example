@@ -2,12 +2,12 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { Range } from 'rc-slider';
 
-import {changePeopleAgeFilter} from '../redux/actions'
-import filteredPeople from '../redux/selectors/filteredPeople';
+import {changeUsersAgeFilter} from '../redux/actions'
+import filteredUsers from '../redux/selectors/filteredUsers';
 
-class People extends Component {
+class users extends Component {
   render() {
-    const {minAge, maxAge, changePeopleAgeFilter, minAgeFilter, maxAgeFilter} = this.props;
+    const {minAge, maxAge, changeUsersAgeFilter, minAgeFilter, maxAgeFilter} = this.props;
 
     return (
       <div>
@@ -32,7 +32,7 @@ class People extends Component {
               min={minAge}
               max={maxAge}
               defaultValue={[minAgeFilter, maxAgeFilter]}
-              onChange={changePeopleAgeFilter}
+              onChange={changeUsersAgeFilter}
             />
             <div style={{flex: '0 0 auto', padding: '0 15px'}}>{maxAgeFilter}</div>
           </div>
@@ -46,9 +46,9 @@ class People extends Component {
           </tr>
           </thead>
           <tbody>
-          {this.props.people.map(person => <tr key={person.id}>
-            <th scope="row">{person.first_name} {person.last_name}</th>
-            <td>{person.age}</td>
+          {this.props.users.map(user => <tr key={user.id}>
+            <th scope="row">{user.first_name} {user.last_name}</th>
+            <td>{user.age}</td>
           </tr>)}
           </tbody>
         </table>
@@ -59,11 +59,11 @@ class People extends Component {
 
 
 export default connect(state => ({
-  people: filteredPeople(state),
-  minAge: state.people.minAge,
-  maxAge: state.people.maxAge,
-  minAgeFilter: state.people.minAgeFilter,
-  maxAgeFilter: state.people.maxAgeFilter,
+  users: filteredUsers(state),
+  minAge: state.users.minAge,
+  maxAge: state.users.maxAge,
+  minAgeFilter: state.users.minAgeFilter,
+  maxAgeFilter: state.users.maxAgeFilter,
 }), {
-  changePeopleAgeFilter
-})(People);
+  changeUsersAgeFilter: changeUsersAgeFilter
+})(users);

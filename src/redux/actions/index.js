@@ -1,2 +1,2 @@
-export {changePeopleAgeFilter} from './people';
+export {changeUsersAgeFilter} from './users';
 export {changeProductPriceFilter} from './products';

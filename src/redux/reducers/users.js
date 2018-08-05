@@ -1,18 +1,18 @@
 import {
-  CHANGE_PEOPLE_AGE_FILTER,
+  CHANGE_USERS_AGE_FILTER,
 } from '../actions/actionTypes';
 
-import people from '../../mockData/people';
+import users from '../../mockData/users';
 import {getMaxVal, getMinVal, getValueFromUrl} from '../../utils/functions';
 import {LOCATION_CHANGE} from 'react-router-redux';
 
-const minAge = getMinVal(people, 'age');
-const maxAge = getMaxVal(people, 'age');
-const minAgeFilter = getValueFromUrl('people.minAge');
-const maxAgeFilter = getValueFromUrl('people.maxAge');
+const minAge = getMinVal(users, 'age');
+const maxAge = getMaxVal(users, 'age');
+const minAgeFilter = getValueFromUrl('users.minAge');
+const maxAgeFilter = getValueFromUrl('users.maxAge');
 
 const initialState = {
-  list: people,
+  list: users,
   minAge,
   maxAge,
   minAgeFilter: minAgeFilter === null ? minAge : Number(minAgeFilter),
@@ -21,14 +21,14 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case CHANGE_PEOPLE_AGE_FILTER:
+    case CHANGE_USERS_AGE_FILTER:
       return {
         ...state,
         minAgeFilter: action.payload.filter[0],
         maxAgeFilter: action.payload.filter[1],
       };
     case LOCATION_CHANGE:
-      return action.payload.pathname === '/people' ? state : {
+      return action.payload.pathname === '/users' ? state : {
         ...state,
         minAgeFilter: minAge,
         maxAgeFilter: maxAge

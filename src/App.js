@@ -5,7 +5,7 @@ import store from './redux';
 import {syncHistoryWithStore} from 'react-router-redux';
 import './App.css';
 import Products from './pages/Products';
-import People from './pages/People';
+import Users from './pages/Users';
 import Main from './pages/Main';
 
 const history = syncHistoryWithStore(browserHistory, store);
@@ -18,7 +18,7 @@ class App extends Component {
           <Route path="/" component={Main}>
             <IndexRoute component={Products} />
             <Route path="/products" component={Products}/>
-            <Route path="/people" component={People}/>
+            <Route path="/users" component={Users}/>
           </Route>
         </Router>
       </Provider>
