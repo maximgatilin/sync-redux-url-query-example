@@ -7,7 +7,7 @@ export default class Main extends Component {
     return (
       <div>
         <nav className="navbar navbar-light bg-light">
-          <a className="navbar-brand" href="#">Redux URL Sync Example</a>
+          <a className="navbar-brand" href="/">Redux URL Sync Example</a>
           <ul className="nav">
             <li className="nav-item">
               <Link className={'nav-link'} activeClassName={'active'} to={"/products"}>Products</Link>

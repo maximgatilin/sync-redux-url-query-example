@@ -7,6 +7,7 @@ import './App.css';
 import Products from './pages/Products';
 import Users from './pages/Users';
 import Main from './pages/Main';
+import Home from './pages/Home';
 
 const history = syncHistoryWithStore(browserHistory, store);
 
@@ -16,7 +17,7 @@ class App extends Component {
       <Provider store={store}>
         <Router history={history}>
           <Route path="/" component={Main}>
-            <IndexRoute component={Products} />
+            <IndexRoute component={Home} />
             <Route path="/products" component={Products}/>
             <Route path="/users" component={Users}/>
           </Route>

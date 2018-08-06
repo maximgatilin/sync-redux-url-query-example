@@ -52,10 +52,6 @@ class Products extends Component {
           </tr>)}
           </tbody>
         </table>
-
-        <ul>
-
-        </ul>
       </div>
     );
   }
